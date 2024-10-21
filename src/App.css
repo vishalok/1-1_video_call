@@ -1,38 +1,210 @@
-.App {
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f4f4f4;
+}
+
+.app-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.app-title {
+  font-size: 1.5rem;
   text-align: center;
+  color: #333;
+  margin-bottom: 1rem;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.error-message {
+  color: red;
+  text-align: center;
+  margin-bottom: 1rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.join-form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  gap: 10px;
+  margin-top: 1rem;
+}
+
+.input-field {
+  width: 100%;
+  max-width: 300px;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.join-button {
+  width: 100%;
+  max-width: 300px;
+  padding: 10px;
+  font-size: 1rem;
+  background-color: #4CAF50;
   color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+.room-container {
+  margin-top: 1rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.room-id {
+  font-size: 1.2rem;
+  text-align: center;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.video-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.video-wrapper {
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.video-player {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.local-video {
+  border-color: #4CAF50;
+}
+
+.remote-video {
+  border-color: #2196F3;
+}
+
+.user-name {
+  margin-top: 0.5rem;
+  font-weight: bold;
+}
+
+.incoming-call {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.accept-button {
+  width: 100%;
+  max-width: 300px;
+  padding: 10px;
+  font-size: 1rem;
+  background-color: #2196F3;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.leave-button{
+    width: 100%;
+  max-width: 300px;
+  padding: 10px;
+  font-size: 1rem;
+  background-color: #f90000;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.call-button{
+  width: 100%;
+  max-width: 300px;
+  padding: 10px;
+  font-size: 1rem;
+  background-color: #0074f9;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Tablet and larger screens */
+@media (min-width: 768px) {
+  .app-title {
+    font-size: 2rem;
   }
-  to {
-    transform: rotate(360deg);
+
+  .video-container {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
   }
+
+  .video-wrapper {
+    width: calc(50% - 1rem);
+  }
+}
+
+/* Desktop screens */
+@media (min-width: 1024px) {
+  .app-container {
+    padding: 20px;
+  }
+
+  .join-form {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .input-field,
+  .join-button {
+    max-width: 200px;
+  }
+
+  .video-wrapper {
+    width: calc(33.33% - 1rem);
+  }
+}
+
+/* Large desktop screens */
+@media (min-width: 1200px) {
+  .app-title {
+    font-size: 2.5rem;
+  }
+
+  .video-wrapper {
+    max-width: 500px;
+  }
+}
+
+/* animation on top */
+
+.creator-info {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  font-size: 12px;
+  color: #666;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 5px 10px;
+  border-radius: 15px;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
